@@ -11,7 +11,7 @@ nav = create_navbar()
 
 def create_page_home():
     header = html.Div(children=[
-        html.H1('Welcome to the Analysis Dashboard!'),
+        html.H1('Welcome to the Analysis Dashboard!', style={'color' : '#0480B4'}),
         
         
     ], style={'margin-top': '15px', 'textAlign': 'center', 'color': '#0480B4'})
