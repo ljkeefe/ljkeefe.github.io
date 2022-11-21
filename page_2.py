@@ -8,6 +8,7 @@ from dash import html, dcc
 from dash import dash_table
 import pandas as pd
 from navbar import create_navbar
+from app import app
 
 nav = create_navbar()
 df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
