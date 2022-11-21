@@ -10,8 +10,8 @@ from dash.dependencies import Input, Output
 
 from app import app
 from navbar import create_navbar
-from page_2 import create_page_2
-from page_3 import create_page_3
+from page_2 import create_page_2, long_data
+from page_3 import create_page_3, df
 from home import create_page_home
 
 server = app.server
