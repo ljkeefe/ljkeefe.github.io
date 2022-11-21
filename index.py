@@ -8,7 +8,8 @@ from jupyter_dash import JupyterDash
 from dash import html, dcc
 from dash.dependencies import Input, Output
 
-from home import create_navbar
+from app import app
+from navbar import create_navbar
 from page_2 import create_page_2
 from page_3 import create_page_3
 from home import create_page_home
