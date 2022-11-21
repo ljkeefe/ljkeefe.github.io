@@ -33,10 +33,3 @@ def create_navbar():
     )
 
     return navbar
-
-
-# In[ ]:
-
-
-
-
