@@ -5,6 +5,7 @@
 
 
 from dash import html, dcc
+import pandas as pd
 from navbar import create_navbar
 
 nav = create_navbar()
