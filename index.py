@@ -27,9 +27,9 @@ app.layout = html.Div([
               [Input('url', 'pathname')])
 
 def display_page(pathname):
-    if pathname == '/page-2':
-        return create_page_2()
     if pathname == '/page-3':
+        return create_page_2()
+    if pathname == '/page-2':
         return create_page_3()
     else:
         return create_page_home()
