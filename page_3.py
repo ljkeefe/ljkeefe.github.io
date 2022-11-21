@@ -104,10 +104,3 @@ def create_page_3():
         header,
     ])
     return layout
-
-
-# In[ ]:
-
-
-
-
