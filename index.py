@@ -7,12 +7,11 @@
 from jupyter_dash import JupyterDash
 from dash import html, dcc
 from dash.dependencies import Input, Output
-from IPython import get_ipython
 
-get_ipython().run_line_magic('run', 'home.ipynb')
-get_ipython().run_line_magic('run', 'page_2.ipynb')
-get_ipython().run_line_magic('run', 'page_3.ipynb')
-get_ipython().run_line_magic('run', 'app.ipynb')
+from home import create_navbar
+from page_2 import create_page_2
+from page_3 import create_page_3
+from home import create_page_home
 
 server = app.server
 app.config.suppress_callback_exceptions = True
