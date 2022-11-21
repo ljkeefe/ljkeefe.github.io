@@ -5,7 +5,6 @@
 
 
 from dash import html, dcc, dash_table
-from dash.dependencies import Input, Output
 import pandas as pd
 from navbar import create_navbar
 from app import app
@@ -82,14 +81,6 @@ def create_page_2():
         header,
     ])
     return layout
-
-@app.callback(
-        Output("download-dataframe-xlsx", "data"),
-        Input("btn_xlsx", "n_clicks"),
-        prevent_initial_call=True,
-    )
-def func(n_clicks):
-    return dcc.send_data_frame(long_data.to_excel, "mydf.xlsx", sheet_name="Sheet_name_1")
 
 
 # In[9]:
