@@ -4,7 +4,7 @@
 # In[2]:
 
 
-from dash import html, dcc
+from dash import html, dcc, dash_table
 import pandas as pd
 from navbar import create_navbar
 
