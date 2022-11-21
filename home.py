@@ -5,8 +5,7 @@
 
 
 from dash import html
-from IPython import get_ipython
-get_ipython().run_line_magic('run', 'navbar.ipynb')
+from navbar import create_navbar
 
 nav = create_navbar()
 
