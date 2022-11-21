@@ -14,7 +14,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar
 def create_page_3():
     header = html.Div(children=[
         html.Div(children=[
-            html.H1(children='Project 2 - TURF Analysis',style={'display':'inline-block', "margin": "15px", 'margin-right':-100, 'textAlign' : 'center', 'color' : '#0480B4'}),
+            html.H1(children='Project 2 - TURF Analysis',style={'display':'inline-block', "margin": "15px", 'margin-right':-100, 'width':'70%', 'textAlign' : 'center', 'color' : '#0480B4'}),
             html.Button("Download Excel", id="btn_xlsx2", style={'float': 'right', 'margin': '15px', 'background-color':'#0480B4', 'color':'white', 'border-radius':'5px'}),
             dcc.Download(id="download-dataframe-xlsx2")
         ], style={'textAlign': 'center'}),
