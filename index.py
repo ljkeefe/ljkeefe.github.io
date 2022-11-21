@@ -7,6 +7,7 @@
 from jupyter_dash import JupyterDash
 from dash import html, dcc
 from dash.dependencies import Input, Output
+from IPython import get_ipython
 
 get_ipython().run_line_magic('run', 'home.ipynb')
 get_ipython().run_line_magic('run', 'page_2.ipynb')
