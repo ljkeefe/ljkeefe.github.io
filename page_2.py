@@ -82,6 +82,14 @@ def create_page_2():
     ])
     return layout
 
+@app.callback(
+        Output("download-dataframe-xlsx2", "data"),
+        Input("btn_xlsx2", "n_clicks"),
+        prevent_initial_call=True,
+    )
+def func(n_clicks):
+    return dcc.send_data_frame(df.to_excel, "mydf.xlsx", sheet_name="Sheet_name_1")
+
 
 # In[9]:
 
