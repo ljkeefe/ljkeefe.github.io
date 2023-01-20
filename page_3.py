@@ -41,6 +41,17 @@ def create_page_3():
     header = html.Div(children=[
         html.Div(children=[
             html.H1(children='Project 2 - TURF Analysis',style={'display':'inline-block', "margin": "15px", 'margin-right':-100, 'textAlign' : 'center', 'color' : '#0480B4'}),
+            dcc.Slider(0, 10,
+                step=None,
+                marks={
+                    0: '0°F',
+                    3: '3°F',
+                    5: '5°F',
+                    7.65: '7.65°F',
+                    10: '10°F'
+                },
+                value=5
+                ),
             html.Button("Download Excel", id="btn_xlsx2", style={'float': 'right', 'margin': '15px', 'background-color':'#0480B4', 'color':'white', 'border-radius':'5px'}),
             dcc.Download(id="download-dataframe-xlsx2")
         ], style={'textAlign': 'center'}),
