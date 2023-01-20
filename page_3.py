@@ -8,6 +8,7 @@ from dash import html, dcc, dash_table
 import pandas as pd
 from navbar import create_navbar
 from data import pie_df
+import plotly.graph_objects as go
 
 nav = create_navbar()
 def TURF(data):
@@ -82,8 +83,11 @@ def create_page_3():
                  'overflow': 'scroll'
             },
             style_as_list_view=True,
-        )
-)
+        ),
+        dcc.Graph(figure=go.Figure(
+            data=[go.Bar(x=df['Flavor'], y=df['Incremental Reach'])],
+            layout=dict(title=dict(text="Incremental Reach of Flavors"))
+        ))
 ])
     layout = html.Div([
         nav,
