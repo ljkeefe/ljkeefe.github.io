@@ -25,7 +25,7 @@ def TURF(data):
         inc_reach = removed/len(data)
         cum_reach+=inc_reach
         remaining-=removed
-        turf.append([flavor.index[0], len(data), removed, remaining, inc_reach, cum_reach])
+        turf.append([flavor.index[0], len(data), removed, remaining, round(inc_reach,2), round(cum_reach,2)])
         my_frame = my_frame[my_frame[flavor.index[0]] != 1]
         r = remaining
         
