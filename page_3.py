@@ -41,7 +41,11 @@ def create_page_3():
     header = html.Div(children=[
         html.Div(children=[
             html.H1(children='Project 2 - TURF Analysis',style={'display':'inline-block', "margin": "15px", 'margin-right':-100, 'textAlign' : 'center', 'color' : '#0480B4'}),
-            html.Div(children=[
+            html.Button("Download Excel", id="btn_xlsx2", style={'float': 'right', 'margin': '15px', 'background-color':'#0480B4', 'color':'white', 'border-radius':'5px'}),
+            dcc.Download(id="download-dataframe-xlsx2")
+        ], style={'textAlign': 'center'}),
+        html.H3(children='Top Box',style={"margin-top": "15px", "margin": "15px", 'textAlign' : 'center', 'color' : '#0480B4'}),
+        html.Div(children=[
                 dcc.Slider(0, 1,
                     step=None,
                     marks={
@@ -50,12 +54,8 @@ def create_page_3():
                     },
                     value=0
                  )],
-                 style={'float':'left', 'width':'10vw', 'padding': None, 'padding-top':'10px', 'margin-right': -35}
+                 style={'float':'left', 'width':'10vw', 'padding': None, 'margin-right': -35}
             ),
-            html.Button("Download Excel", id="btn_xlsx2", style={'float': 'right', 'margin': '15px', 'background-color':'#0480B4', 'color':'white', 'border-radius':'5px'}),
-            dcc.Download(id="download-dataframe-xlsx2")
-        ], style={'textAlign': 'center'}),
-        html.H3(children='Top Box',style={"margin-top": "15px", "margin": "15px", 'textAlign' : 'center', 'color' : '#0480B4'}),
         dash_table.DataTable(
             df.to_dict('records'), [{"name": i, "id": i} for i in df.columns],
             style_data={
