@@ -14,6 +14,7 @@ def TURF(data):
     my_frame = data.copy()
     r = 1
     f = 1
+    rr=1
     turf = []
     cum_reach = 0
     remaining=len(data)
