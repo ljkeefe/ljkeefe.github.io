@@ -82,7 +82,15 @@ def create_page_3():
                  'overflow': 'scroll'
             },
             style_as_list_view=True,
-        )
+        ),
+        dcc.Graph(
+    figure={
+        'data': df[['Flavor', 'Incremental Reach']],
+        'layout': {
+            'title': 'Dash Data Visualization'
+        }
+    }
+)
 ])
     layout = html.Div([
         nav,
