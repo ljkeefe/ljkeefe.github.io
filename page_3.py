@@ -29,7 +29,7 @@ def TURF(data):
         my_frame = my_frame[my_frame[flavor.index[0]] != 1]
         r = remaining
         
-    analysis_frame = pd.DataFrame(turf, columns = ['Flavor', 'N', 'Removed', 'Remaining', 'Incremental Reach', 'Cumulative Reach'])
+    analysis_frame = pd.DataFrame(turf, columns = ['Flavor', 'Base Size', 'Removed', 'Remaining', 'Incremental Reach', 'Cumulative Reach'])
     return analysis_frame
 df = TURF(pie_df)
 
