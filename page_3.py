@@ -47,8 +47,7 @@ def create_page_3():
                     marks={
                         0: '0°F',
                         10: '10°F'
-                    },
-                    value=5)],
+                    })],
                  style={'float':'left', 'width':'10wh'}
             ),
             html.Button("Download Excel", id="btn_xlsx2", style={'float': 'right', 'margin': '15px', 'background-color':'#0480B4', 'color':'white', 'border-radius':'5px'}),
