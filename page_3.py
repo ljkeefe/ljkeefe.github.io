@@ -43,12 +43,14 @@ def create_page_3():
             html.H1(children='Project 2 - TURF Analysis',style={'display':'inline-block', "margin": "15px", 'margin-right':-100, 'textAlign' : 'center', 'color' : '#0480B4'}),
             html.Div(children=[
                 dcc.Slider(0, 10,
-                    step=2,
+                    step=None,
                     marks={
-                        0: '0°F',
-                        10: '10°F'
-                    })],
-                 style={'float':'left', 'width':'30hv'}
+                        0: 'Summary',
+                        1: 'Graphs'
+                    },
+                    value=0
+                 )],
+                 style={'float':'left', 'width':'300px'}
             ),
             html.Button("Download Excel", id="btn_xlsx2", style={'float': 'right', 'margin': '15px', 'background-color':'#0480B4', 'color':'white', 'border-radius':'5px'}),
             dcc.Download(id="download-dataframe-xlsx2")
