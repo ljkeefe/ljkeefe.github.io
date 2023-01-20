@@ -50,7 +50,7 @@ def create_page_3():
                     },
                     value=0
                  )],
-                 style={'float':'left', 'width':'50px', 'padding': None}
+                 style={'float':'left', 'width':'30vw', 'padding': None}
             ),
             html.Button("Download Excel", id="btn_xlsx2", style={'float': 'right', 'margin': '15px', 'background-color':'#0480B4', 'color':'white', 'border-radius':'5px'}),
             dcc.Download(id="download-dataframe-xlsx2")
