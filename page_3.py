@@ -42,7 +42,7 @@ def create_page_3():
         html.Div(children=[
             html.H1(children='Project 2 - TURF Analysis',style={'display':'inline-block', "margin": "15px", 'margin-right':-100, 'textAlign' : 'center', 'color' : '#0480B4'}),
             html.Div(children=[
-                dcc.Slider(0, 10,
+                dcc.Slider(0, 1,
                     step=None,
                     marks={
                         0: 'Summary',
