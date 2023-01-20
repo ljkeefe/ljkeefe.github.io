@@ -17,7 +17,7 @@ def TURF(data):
     turf = []
     cum_reach = 0
     remaining=len(data)
-    while (r > 0) and (f != 0):
+    while (r > 0) and (f != 0) and (rr > 0):
         summy = my_frame.sum()
         flavor = summy[summy == summy.max()]
         f = flavor.values[0]
@@ -25,9 +25,11 @@ def TURF(data):
         inc_reach = removed/len(data)
         cum_reach+=inc_reach
         remaining-=removed
-        turf.append([flavor.index[0], len(data), removed, remaining, round(inc_reach,2), round(cum_reach,2)])
-        my_frame = my_frame[my_frame[flavor.index[0]] != 1]
+        if removed > 0:
+            turf.append([flavor.index[0], len(data), removed, remaining, round(inc_reach,2), round(cum_reach,2)])
+            my_frame = my_frame[my_frame[flavor.index[0]] != 1]
         r = remaining
+        rr = removed
         
     analysis_frame = pd.DataFrame(turf, columns = ['Flavor', 'Base Size', 'Removed', 'Remaining', 'Incremental Reach', 'Cumulative Reach'])
     return analysis_frame
