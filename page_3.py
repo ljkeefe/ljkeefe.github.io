@@ -89,7 +89,7 @@ def create_page_3():
         'layout': {
             'title': 'Dash Data Visualization'
         }
-    }
+    })
 )
 ])
     layout = html.Div([
