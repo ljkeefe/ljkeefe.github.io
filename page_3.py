@@ -75,7 +75,7 @@ def create_page_3():
                 'margin' : 'auto',
                 'box-shadow': '5px 5px 10px 3px rgba(0, 0, 0, 0.39)',
                 'border': '1px solid #0480B4',
-                'maxHeight': '240px', 
+                'maxHeight': '80vh', 
                  'overflow': 'scroll'
             },
             style_as_list_view=True,
