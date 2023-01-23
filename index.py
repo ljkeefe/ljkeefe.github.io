@@ -10,7 +10,7 @@ from dash.dependencies import Input, Output
 
 from app import app
 from navbar import create_navbar
-from page_2 import create_page_2, long_data
+from page_2 import create_page_2, df2
 from page_3 import create_page_3, df
 from home import create_page_home
 
@@ -40,7 +40,7 @@ def display_page(pathname):
         prevent_initial_call=True,
     )
 def func(n_clicks):
-    return dcc.send_data_frame(long_data.to_excel, "mydf.xlsx", sheet_name="Sheet_name_1")
+    return dcc.send_data_frame(df2.to_excel, "mydf.xlsx", sheet_name="Sheet_name_1")
 
 @app.callback(
         Output("download-dataframe-xlsx2", "data"),
