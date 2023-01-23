@@ -1,9 +1,10 @@
 import pandas as pd
 import numpy as np
 
-pie_df = pd.DataFrame(columns = ['apple', 'banana', 'coconut cream', 'lemon meringue', 'pumpkin', 'chocolate', 'rubarb', 'cherry'])
+item_list = ['apple', 'banana', 'coconut cream', 'lemon meringue', 'pumpkin', 'chocolate', 'rubarb', 'cherry']
+pie_df = pd.DataFrame(columns = item_list)
 
-for i in [j for j in pie_df.columns if j != 'person']:
+for i in [j for j in pie_df.columns]:
     listy = np.random.randint(2, size=300)
     if sum(listy) in pie_df.sum().values:
         listy = np.random.randint(2, size=300)
