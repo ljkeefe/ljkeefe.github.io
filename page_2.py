@@ -14,7 +14,7 @@ nav = create_navbar()
 
 df2 = MD_agg_df.sort_values('MaxDiff Score', ascending=False)
 
-df2['MaxDiff Score'] = [str(i)+'%' for i in df2['MaxDiff Score']]
+df2['MaxDiff Score'] = [str(round(i*100,2))+'%' for i in df2['MaxDiff Score']]
 
 def create_page_2():
     header = html.Div(children=[
@@ -31,20 +31,6 @@ def create_page_2():
                 'border': '1px solid #0480B4',
                 'backgroundColor': '#FFFFFF'
             },
-            style_data_conditional=[
-                {
-                    'if': {
-                        'filter_query': '{MaxDiff Score} > 100'
-                    },
-                    'backgroundColor': '#04B490'
-                },
-                {
-                    'if': {
-                        'column_id': 'State'
-                    },
-                    'textAlign': 'center'
-                },
-            ],
             style_cell={
                 # all three widths are needed
                 'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
