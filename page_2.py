@@ -8,11 +8,11 @@ from dash import html, dcc, dash_table
 import pandas as pd
 from navbar import create_navbar
 from app import app
-from data import MD_agg_df
+from data import md_agg_df
 
 nav = create_navbar()
 
-df2 = MD_agg_df.sort_values('MaxDiff Score', ascending=False)
+df2 = md_agg_df.sort_values('MaxDiff Score', ascending=False)
 
 df2['MaxDiff Score'] = [str(round(i*100,2))+'%' for i in df2['MaxDiff Score']]
 
