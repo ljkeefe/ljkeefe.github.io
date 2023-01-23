@@ -13,23 +13,23 @@ for i in [j for j in pie_df.columns]:
         pie_df[i] = listy
 
         
-MD_agg_df = pd.DataFrame(columns = ['Item', 'Item #', 'MaxDiff Score'])
+md_agg_df = pd.DataFrame(columns = ['Item', 'Item #', 'MaxDiff Score'])
 
-MD_agg_df['Item'] = item_list
-MD_agg_df['Item #'] = list(range(1,len(item_list)+1))
+md_agg_df['Item'] = item_list
+md_agg_df['Item #'] = list(range(1,len(item_list)+1))
 
 perc = 1
 for i in item_list:
     j = np.random.uniform(0,perc)
-    MD_agg_df.loc[MD_agg_df[''] == i, 'MaxDiff Score'] = j
+    md_agg_df.loc[md_agg_df[''] == i, 'MaxDiff Score'] = j
     perc -= j
-MD_agg_df.sort_values('MaxDiff Score', ascending=False)
+md_agg_df.sort_values('MaxDiff Score', ascending=False)
 
-MD_resp_df = pd.DataFrame(columns = item_list)
+md_resp_df = pd.DataFrame(columns = item_list)
 
 for i in list(range(500)):
     perc = 1
     for j in item_list:
         k = np.random.uniform(0,perc)
-        MD_resp_df.loc[i, j] = k
+        md_resp_df.loc[i, j] = k
         perc -= k
