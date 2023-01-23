@@ -56,7 +56,7 @@ def create_page_2():
         ),
     html.H3(children='Top Concepts',style={"margin-top": "15px", "margin": "15px", 'textAlign' : 'center', 'color' : '#0480B4'}),
     html.Ol(children=[
-        html.Li(children=df2.loc[x,'Item']) for x in df2.index if df2.loc[x,'MaxDiff Score'] > df2['MaxDiff Score'].mean()
+        html.Li(children=df2.loc[x,'Item']) for x in df2.index if x < 3
     ], style={'textAlign':'center', 'list-style-position': 'inside', 'margin' : 'auto'})
 ])
 
