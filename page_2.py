@@ -12,9 +12,9 @@ from data import MD_agg_df
 
 nav = create_navbar()
 
-df = MD_agg_df.sort_values('MaxDiff Score', ascending=False)
+df2 = MD_agg_df.sort_values('MaxDiff Score', ascending=False)
 
-df['MaxDiff Score'] = [str(i)+'%' for i in df['MaxDiff Score']]
+df2['MaxDiff Score'] = [str(i)+'%' for i in df2['MaxDiff Score']]
 
 def create_page_2():
     header = html.Div(children=[
@@ -25,7 +25,7 @@ def create_page_2():
         ], style={'textAlign': 'center'}),
         html.H3(children='MaxDiff Scores',style={"margin-top": "15px", "margin": "15px", 'textAlign' : 'center', 'color' : '#0480B4'}),
         dash_table.DataTable(
-            df.to_dict('records'), [{"name": i, "id": i} for i in df.columns],
+            df2.to_dict('records'), [{"name": i, "id": i} for i in df2.columns],
             style_data={
                 'color': 'black',
                 'border': '1px solid #0480B4',
@@ -70,7 +70,7 @@ def create_page_2():
         ),
     html.H3(children='Top Concepts',style={"margin-top": "15px", "margin": "15px", 'textAlign' : 'center', 'color' : '#0480B4'}),
     html.Ol(children=[
-        html.Li(children=df.loc[x,'Item']) for x in df.index if df.loc[x,'MaxDiff Score'] > df['MaxDiff Score'].mean()
+        html.Li(children=df2.loc[x,'Item']) for x in df2.index if df2.loc[x,'MaxDiff Score'] > df2['MaxDiff Score'].mean()
     ], style={'textAlign':'center', 'list-style-position': 'inside', 'margin' : 'auto'})
 ])
 
