@@ -8,15 +8,13 @@ from dash import html, dcc, dash_table
 import pandas as pd
 from navbar import create_navbar
 from app import app
+from data import MD_agg_df
 
 nav = create_navbar()
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/solar.csv')
 
-df = df.sort_values('Number of Solar Plants', ascending=False)
+df = MD_agg_df.sort_values('MaxDiff Score', ascending=False)
 
-df['Average MW Per Plant'] = [str(i)+'%' for i in df['Average MW Per Plant']]
-
-long_data = pd.concat([df,df])
+df['MaxDiff Score'] = [str(i)+'%' for i in df['MaxDiff Score']]
 
 def create_page_2():
     header = html.Div(children=[
@@ -27,7 +25,7 @@ def create_page_2():
         ], style={'textAlign': 'center'}),
         html.H3(children='MaxDiff Scores',style={"margin-top": "15px", "margin": "15px", 'textAlign' : 'center', 'color' : '#0480B4'}),
         dash_table.DataTable(
-            long_data.to_dict('records'), [{"name": i, "id": i} for i in df.columns],
+            df.to_dict('records'), [{"name": i, "id": i} for i in df.columns],
             style_data={
                 'color': 'black',
                 'border': '1px solid #0480B4',
@@ -36,7 +34,7 @@ def create_page_2():
             style_data_conditional=[
                 {
                     'if': {
-                        'filter_query': '{Number of Solar Plants} > 100'
+                        'filter_query': '{MaxDiff Score} > 100'
                     },
                     'backgroundColor': '#04B490'
                 },
@@ -72,7 +70,7 @@ def create_page_2():
         ),
     html.H3(children='Top Concepts',style={"margin-top": "15px", "margin": "15px", 'textAlign' : 'center', 'color' : '#0480B4'}),
     html.Ol(children=[
-        html.Li(children=df.loc[x,'State']) for x in df.index if df.loc[x,'Number of Solar Plants'] > 100
+        html.Li(children=df.loc[x,'Item']) for x in df.index if df.loc[x,'MaxDiff Score'] > df['MaxDiff Score'].mean()
     ], style={'textAlign':'center', 'list-style-position': 'inside', 'margin' : 'auto'})
 ])
 
