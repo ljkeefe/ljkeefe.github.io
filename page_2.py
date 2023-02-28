@@ -58,7 +58,7 @@ def create_page_2():
    # html.Ol(children=[
    #     html.Li(children=df2.loc[x,'Item']) for x in df2.index if x < 3
 #    ], style={'textAlign':'center', 'list-style-position': 'inside', 'margin' : 'auto'})
-#])
+])
 
     layout = html.Div([
         nav,
