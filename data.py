@@ -21,7 +21,7 @@ md_agg_df['Item #'] = list(range(1,len(item_list)+1))
 perc = 1
 for i in item_list:
     j = np.random.uniform(0,perc)
-    md_agg_df.loc[md_agg_df[''] == i, 'MaxDiff Score'] = j
+    md_agg_df.loc[md_agg_df['Item'] == i, 'MaxDiff Score'] = j
     perc -= j
 md_agg_df.sort_values('MaxDiff Score', ascending=False)
 
