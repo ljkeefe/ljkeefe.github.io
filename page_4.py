@@ -2,9 +2,7 @@ from dash import html, dcc, ALL
 import numpy as np
 from plotly.figure_factory import create_dendrogram
 import dash_mantine_components as dmc
-from navbar import nav
-
-%run navbar.ipynb
+from navbar import create_navbar
 
 nav = create_navbar()
 
