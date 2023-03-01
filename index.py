@@ -6,7 +6,7 @@
 
 from jupyter_dash import JupyterDash
 from dash import html, dcc, ALL
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 
 from app import app
 from navbar import create_navbar
