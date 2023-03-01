@@ -1,4 +1,4 @@
-from dash import html, dcc, ALL
+from dash import html, dcc
 import numpy as np
 from plotly.figure_factory import create_dendrogram
 import dash_mantine_components as dmc
