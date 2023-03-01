@@ -1,4 +1,5 @@
 from dash import html, dcc
+import dash_bootstrap_components as dbc
 import numpy as np
 from plotly.figure_factory import create_dendrogram
 import dash_mantine_components as dmc
