@@ -12,7 +12,7 @@ from app import app
 from navbar import create_navbar
 from page_2 import create_page_2, df2
 from page_3 import create_page_3, df
-from page_4 import create_page_4
+from page_4 import create_page_4, figgies
 from home import create_page_home
 
 server = app.server
