@@ -22,6 +22,7 @@ def create_navbar():
                     dbc.DropdownMenuItem(divider=True), # Divider item that appears in the dropdown menu 
                     dbc.DropdownMenuItem("Project 1", href='/page-2'), # Hyperlink item that appears in the dropdown menu
                     dbc.DropdownMenuItem("Project 2", href='/page-3'), # Hyperlink item that appears in the dropdown menu
+                    dbc.DropdownMenuItem("Project 2", href='/page-3'), # Hyperlink item that appears in the dropdown menu
                 ],
             ),
         ],
