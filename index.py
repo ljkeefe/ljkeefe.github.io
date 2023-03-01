@@ -5,7 +5,7 @@
 
 
 from jupyter_dash import JupyterDash
-from dash import html, dcc
+from dash import html, dcc, ALL
 from dash.dependencies import Input, Output
 
 from app import app
